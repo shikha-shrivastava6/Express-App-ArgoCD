@@ -1,0 +1,23 @@
+{
+  "name": "express-app-argocd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shikha-shrivastava6/Express-App-ArgoCD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shikha-shrivastava6/Express-App-ArgoCD/issues"
+  },
+  "homepage": "https://github.com/shikha-shrivastava6/Express-App-ArgoCD#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "start": "^5.1.0"
+  }
+}

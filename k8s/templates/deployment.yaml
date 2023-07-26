@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.name }}
+  labels:
+    {{ .Values.name }}
+spec:
+  replicas: {{ .Values.replica }}
+  selector:
+    matchLabels:
+      app: {{ .Values.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.name }}
+        releaseTime: {{ dateInZone "2006-01-02 15:04:05Z" (now) "UTC"| quote }}
+    spec:
+      containers:
+      - name: {{ .Values.name }}
+        image: {{ .Values.image }}
+        ports:
+        - containerPort: {{ .Values.port }}
+        envFrom:
+          - configMapRef:
+                name: {{ .Values.name }}
+          - secretRef:
+                name: {{ .Values.name }}
+        resources:
+          requests:
+            memory: {{ .Values.resource.requests.memory }}
+            cpu: {{ .Values.resource.requests.cpu }}
+          limits:
+            memory: {{ .Values.resource.limits.memory }}
+            cpu: {{ .Values.resource.limits.cpu }}  
+        volumeMounts:
+          - mountPath: "/app/env.sh"
+            name: vol-1
+            subPath: "env.sh"
+      volumes:
+      - name: secret
+        secret:
+          secretName: {{ .Values.name }}

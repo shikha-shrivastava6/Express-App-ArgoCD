@@ -1,0 +1,12 @@
+name: nginx
+image: "nginx:latest"
+port: 3000
+replica: 2
+resource:
+  requests:
+    memory: "2Mi"
+    cpu: "1m"
+  limits:
+    memory: "5Mi"
+    cpu: "2m"
+  
