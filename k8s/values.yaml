@@ -4,9 +4,9 @@ port: 3000
 replica: 2
 resource:
   requests:
-    memory: "2Mi"
+    memory: "50Mi"
     cpu: "1m"
   limits:
-    memory: "5Mi"
+    memory: "100Mi"
     cpu: "2m"
   
