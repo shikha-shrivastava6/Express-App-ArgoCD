@@ -1,5 +1,5 @@
-name: nginx
-image: "nginx:latest"
+name: express-app
+image: "shshrivastava7/express-app:latest"
 port: 3000
 replica: 2
 resource:
