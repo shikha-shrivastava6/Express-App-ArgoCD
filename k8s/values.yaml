@@ -1,5 +1,5 @@
 name: express-app
-image: "shshrivastava7/express-app:latest"
+image: "shshrivastava7/express-app"
 port: 3000
 replica: 2
 resource:
