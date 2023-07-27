@@ -12,8 +12,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ .Values.name }}
-        releaseTime: {{ dateInZone "2006-01-02 15:04:05Z" (now) "UTC"| quote }}
+        app: {{ .Values.name }} 
     spec:
       containers:
       - name: {{ .Values.name }}
@@ -37,6 +36,6 @@ spec:
             name: vol-1
             subPath: "env.sh"
       volumes:
-      - name: secret
+      - name: vol-1
         secret:
           secretName: {{ .Values.name }}
